@@ -6,7 +6,7 @@ from src.exception import CustomException
 from src.logger import logging
 from src.components.data_transformation import DataTransformation
 from dataclasses import dataclass
-
+from src.components.model_trainer import ModelTrainer
 @dataclass
 class DataIngestionConfig:
     raw_data_path: str = os.path.join("artifacts","raw_data.csv")
@@ -53,4 +53,7 @@ if __name__=="__main__":
 
     data_transformation_object=DataTransformation()
     train_arr,test_arr=data_transformation_object.data_transformation_initiated(train_set,test_set)
+
+    model_trainer_object=ModelTrainer()
+    model_trainer_object.model_trainer_initiated(train_arr,test_arr)
 
