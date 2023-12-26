@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Exam Performance Indicator</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 50px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .login h1 {
+            text-align: center;
+            color: #3498db;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            border-color: #3498db;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+
+        h2 {
+            text-align: center;
+            color: #3498db;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login">
+            <h1>📚 Welcome to Predicting Water Quality!</h1>
+
+            <form action="{{ url_for('prediction')}}" method="post">
+
+                <div class="form-group">
+                    <label for="Ph">Enter ph value here</label>
+                    <input class="form-control" type="number" id="Ph" name="Ph" placeholder="Enter ph value here" min="0" max="14" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Hardness">Enter Hardness value here</label>
+                    <input class="form-control" type="number" id="Hardness" name="Hardness" placeholder="Enter Hardness value here" min="0" max="350" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Solids">Enter Solids value here</label>
+                    <input class="form-control" type="number" id="Solids" name="Solids" placeholder="Enter Solids value here" min="300" max="70000" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Chloramines">Enter Chloramines value here</label>
+                    <input class="form-control" type="number" id="Chloramines" name="Chloramines" placeholder="Enter Chloramines value here" min="0" max="14" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Sulfate">Enter Sulfate value here</label>
+                    <input class="form-control" type="number" id="Sulfate" name="Sulfate" placeholder="Enter Sulfate value here" min="100" max="500" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Conductivity">Enter Conductivity value here</label>
+                    <input class="form-control" type="number" id="Conductivity" name="Conductivity" placeholder="Enter Conductivity value here" min="150" max="800" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Organic_carbon">Enter Organic_carbon value here</label>
+                    <input class="form-control" type="number" id="Organic_carbon" name="Organic_carbon" placeholder="Enter Organic_carbon value here" min="0" max="30" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Trihalomethanes">Enter Trihalomethanes value here</label>
+                    <input class="form-control" type="number" id="Trihalomethanes" name="Trihalomethanes" placeholder="Enter Trihalomethanes value here" min="0" max="100" />
+                </div>
+
+                <div class="form-group">
+                    <label for="Turbidity">Enter Turbidity value here</label>
+                    <input class="form-control" type="number" id="Turbidity" name="Turbidity" placeholder="Enter Turbidity value here" min="0" max="10" />
+                </div>
+
+                <div class="form-group text-center">
+                    <input class="btn btn-primary" type="submit" value="Submit" required />
+                </div>
+            </form>
+
+            <section id="prediction-result">
+                <h2>
+                    prediction Result:
+                    {% if prediction == 0 %}
+                        <strong>The water is not drinkable</strong>    
+                    {% elif prediction == 1 %}
+                        <strong>The water is drinkable</strong>
+                    {% else %}
+                        <strong>Click Submit button for prediction</strong>
+                    {% endif %}
+                </h2>
+            </section>
+    
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

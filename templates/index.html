@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicting Water Quality</title>
+
+    <!-- Google Fonts - Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+            background-image: linear-gradient(#190d50, #011a34); /* Dark blue or navy blue gradient */
+            overflow-x: hidden;
+        }
+
+        main {
+            width: 80%;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3d3d3d;
+            margin-bottom: 1rem;
+        }
+
+        section p {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #5a5a5a;
+        }
+
+        section strong {
+            color: #8b5d2e;
+        }
+
+        #features {
+            background-color: white; /* Dark blue or navy blue background */
+            color: rgb(52, 8, 100); /* White font color for better readability on dark background */
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        #cta {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        #cta h2 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #3d3d3d;
+            margin-bottom: 1rem;
+        }
+
+        #cta p {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: #5a5a5a;
+        }
+
+        #cta button {
+            padding: 1.8rem 3.5rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #8b5d2e;
+            color: white;
+            border: none;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        #cta button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+</head>
+<body>
+
+    <main class="container">
+        <section id="intro">
+            <h2>Welcome to Predicting Water Quality</h2>
+            <p>Your reliable source for advanced water quality analysis.</p>
+        </section>
+
+        <section id="features">
+            <h2><strong>Key Features</strong></h2>
+            <p style="text-align: justify;">Our predictive models leverage sophisticated algorithms to analyze historical data. We employ cutting-edge algorithms that enhance the accuracy and efficiency of our water quality predictions, ensuring reliable results for various scenarios.
+
+            Stay ahead of changes with our real-time monitoring system. Our system provides continuous, real-time updates on water quality metrics, allowing you to respond promptly to any changes or potential issues in your water ecosystems.
+
+            Accessible and intuitive platform for users of all levels. Our user interface is designed with simplicity and accessibility in mind. Whether you're a seasoned water quality expert or a novice user, our platform offers an intuitive experience for effective water quality analysis.
+
+            Tailor reports to meet your specific needs. Customize your water quality reports to focus on the metrics and insights that matter most to you. Our platform allows you to generate detailed and personalized reports, providing valuable information for decision-making and analysis.
+
+            Foster collaboration and community awareness. We believe in the power of community engagement. Our platform encourages collaboration among stakeholders and promotes community awareness regarding water quality issues. By working together, we can make a meaningful impact on water ecosystems.</p>
+        </section>
+
+        <section id="call-to-action">
+            <h2>Join us in safeguarding water ecosystems by predicting water quality intelligently.</h2>
+            <p>Explore the future of water quality analysis with us – where data meets impact.</p>
+            
+            <!-- Button to redirect to prediction page -->
+            <a href="{{ url_for('prediction')}}" class="btn btn-primary btn-lg">Predict Water Quality</a>
+        </section>
+    </main>
+
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
